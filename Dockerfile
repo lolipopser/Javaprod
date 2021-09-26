@@ -1,7 +1,6 @@
 
-FROM ubuntu:20.04
+FROM tomcat:latest
 RUN apt-get update
-RUN apt-get install tomcat9 -y
 RUN apt-get install default-jdk -y
 RUN apt-get install maven -y
 RUN apt-get install git -y
@@ -13,6 +12,6 @@ RUN mvn package
 WORKDIR /var/lib/
 RUN pwd
 RUN ls -la
-RUN cp /var/boxfuse_src/boxfuse-sample-java-war-hello/target/hello-1.0.war /var/lib/tomcat9/webapps
-EXPOSE 80
+RUN cp /var/boxfuse_src/boxfuse-sample-java-war-hello/target/hello-1.0.war /usr/local/tomcat/webapps/
+EXPOSE 8080
 CMD ["catalina.sh", "run"]
