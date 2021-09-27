@@ -3,7 +3,6 @@ RUN apt-get update
 RUN apt-get install default-jdk -y
 RUN apt-get install maven -y
 RUN apt-get install git -y
-RUN mkdir /var/boxfuse_src
 WORKDIR /var/boxfuse_src
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 WORKDIR /var/boxfuse_src/boxfuse-sample-java-war-hello
