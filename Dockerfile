@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-RUN apt update && apt upgrade
+RUN apt update && apt upgrade -y
 RUN apt install default-jdk -y
 RUN apt install maven -y
 RUN apt install git -y
