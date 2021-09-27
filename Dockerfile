@@ -10,7 +10,7 @@ RUN mvn package
 RUN apt install curl -y
 RUN curl -o /tmp/tomcat.tar.gz https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.53/bin/apache-tomcat-9.0.53.tar.gz
 RUN cd /tmp && tar xvfz tomcat.tar.gz
-RUN cp -Rv /tmp/apache-tomcat-9.0.53/* /usr/local/tomcat/
+RUN cp -Rv /tmp/apache-tomcat-9.0.53 /usr/local/tomcat
 RUN cp /var/boxfuse_src/boxfuse-sample-java-war-hello/target/hello-1.0.war /usr/local/tomcat/webapps
 EXPOSE 8080
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
